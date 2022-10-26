@@ -26,4 +26,3 @@ private:
   Adafruit_I2CDevice *i2c_dev;
 };
 
-#endif
