@@ -20,7 +20,7 @@ bool AD5245::begin(uint8_t i2c_address, TwoWire *wire) {
 
 uint8_t AD5245::getWiper(void) {
   Adafruit_BusIO_Register wiper =
-      Adafruit_BusIO_Register(i2c_dev, DS3502_WIPER, 1);
+      Adafruit_BusIO_Register(i2c_dev, AD5245_WIPER, 1);
   return wiper.read();
 }
 
@@ -29,7 +29,7 @@ void AD5245::setWiper(uint8_t new_wiper_value) {
     return;
   }
   Adafruit_BusIO_Register wiper =
-      Adafruit_BusIO_Register(i2c_dev, DS3502_WIPER, 1);
+      Adafruit_BusIO_Register(i2c_dev, AD5245_WIPER, 1);
   wiper.write(new_wiper_value);
 }
 
@@ -39,7 +39,7 @@ void AD5245::setWiperDefault(uint8_t new_wiper_default) {
   }
 
   Adafruit_BusIO_Register wiper =
-      Adafruit_BusIO_Register(i2c_dev, DS3502_WIPER, 1);
+      Adafruit_BusIO_Register(i2c_dev, AD5245_WIPER, 1);
 
   mode_selector->write(0x00);     // set mode to write default on wiper write
   wiper.write(new_wiper_default); // write the new wiper value which carries
