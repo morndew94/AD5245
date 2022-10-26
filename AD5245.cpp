@@ -12,7 +12,7 @@ bool AD5245::begin(uint8_t i2c_address, TwoWire *wire) {
     return false;
   }
 
-  mode_selector = new Adafruit_BusIO_Register(i2c_dev, DS3502_MODE, 1);
+  mode_selector = new Adafruit_BusIO_Register(i2c_dev, AD5245_MODE, 1);
   mode_selector->write(0x80);
   return true;
 }
